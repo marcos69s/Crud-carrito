@@ -1,7 +1,6 @@
 const { Schema, model, Types } = require('mongoose');
 
 const CarritoSchema = Schema({
-    id_carrito: { type: Types.ObjectId, required: true, unique: true },
     nombre_producto: { type: String, required: true },
     nombre_usuario: { type: String, required: true },
     nombre_metodo: { type: String, required: true },

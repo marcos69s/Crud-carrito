@@ -14,8 +14,8 @@ const carritoGet = async (req, res = response) => {
 
 const carritoPost = async (req, res = response) => {
     try {
-        const { id_carrito, nombre_producto, nombre_usuario, nombre_metodo, estado_confirmacion, direccion_envio, subtotal, total } = req.body;
-        const carrito = new Carrito({ id_carrito, nombre_producto, nombre_usuario, nombre_metodo, estado_confirmacion, direccion_envio, subtotal, total });
+        const { nombre_producto, nombre_usuario, nombre_metodo, estado_confirmacion, direccion_envio, subtotal, total } = req.body;
+        const carrito = new Carrito({  nombre_producto, nombre_usuario, nombre_metodo, estado_confirmacion, direccion_envio, subtotal, total });
         await carrito.save();
         res.json({ msg: 'Carrito creado', carrito });
     } catch (error) {
